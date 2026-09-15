@@ -1,0 +1,44 @@
+# Build trees
+/build/
+/build-*/
+/out/
+/install/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+CMakeUserPresets.json
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.so
+*.dylib
+*.a
+*.o
+
+# CTest / test artifacts
+Testing/
+LastTest.log
+*.log
+
+# Runtime state produced by ftcli / ftcoordinator / ftpublisher / tests
+*.ftstate
+*.fttmp
+*.ftdump
+*.ftpid
+
+# Editor / OS noise
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+*~
+*.swp

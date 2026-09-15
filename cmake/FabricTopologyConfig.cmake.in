@@ -1,0 +1,11 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+set(FabricTopology_VERSION "@PROJECT_VERSION@")
+set(FABRIC_TOPOLOGY_VERSION "@PROJECT_VERSION@")
+set(FABRIC_TOPOLOGY_FOUND TRUE)
+
+include("${CMAKE_CURRENT_LIST_DIR}/FabricTopologyTargets.cmake")
+
+check_required_components(FabricTopology)
