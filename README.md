@@ -15,7 +15,7 @@ It does not model health, reachability, routing or path authority.
 
 ## 1. Where Fabric Topology sits
 
-Fabric Topology consumes canonical identities established by **Fabric Registry** and builds a
+Fabric Topology consumes canonical identities established by **[Fabric Registry](https://github.com/pngen/Fabric-Registry)** and builds a
 governed graph over them.
 
 | Concern | Owner |
