@@ -1,7 +1,6 @@
 # Fabric Topology
 
-**Fabric Topology** is the authoritative, generation-bound topology-governance runtime of the
-Distributed Fabric Infrastructure / Fabric OS stack. It answers one question and answers it
+**Fabric Topology** is the authoritative, generation-bound topology-governance runtime for data-center fabric infrastructure. It answers one question and answers it
 precisely:
 
 > What fabric entities are connected to what, through which current relationships, under which
