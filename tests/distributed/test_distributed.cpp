@@ -615,4 +615,18 @@ FT_TEST(distributed, repeated_start_stop_leaves_no_orphans) {
     FT_CHECK(true);
 }
 
+FT_TEST(distributed, a_second_listener_cannot_take_a_listening_port) {
+    runtime::FrameTransport first;
+    std::string error;
+    FT_CHECK(first.listen("127.0.0.1", 0, error));
+    const std::uint16_t port = first.local_port();
+    FT_CHECK(port != 0);
+    // Two coordinators must never share one listening port: the second listen fails.
+    runtime::FrameTransport second;
+    std::string second_error;
+    FT_CHECK(!second.listen("127.0.0.1", port, second_error));
+    second.close();
+    first.close();
+}
+
 #endif  // _WIN32

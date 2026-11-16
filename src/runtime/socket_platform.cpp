@@ -149,8 +149,15 @@ bool Socket::set_reuse_address(std::string& error) const {
         return false;
     }
     const int one = 1;
+#ifdef _WIN32
+    // SO_REUSEADDR on Windows lets a second socket bind a port that is still
+    // listening; exclusive use makes that second bind fail instead.
+    const int option = static_cast<int>(SO_EXCLUSIVEADDRUSE);
+#else
+    const int option = static_cast<int>(SO_REUSEADDR);
+#endif
     if (::setsockopt(static_cast<int>(handle_), SOL_SOCKET,
-                     static_cast<int>(SO_REUSEADDR), reinterpret_cast<const char*>(&one),
+                     option, reinterpret_cast<const char*>(&one),
                      static_cast<int>(sizeof(one))) != 0) {
         error = last_socket_error();
         return false;
